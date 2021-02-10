@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 import time
 import random
 
+#достаем инфу из документов и рандомим случайные выражения
 fmn = open('res/male_name.txt',encoding='utf-8')
 fs = open('res/surnames.txt',encoding='utf-8')
 namedb=[]
@@ -24,12 +25,13 @@ print(surdb[surindex]+' '+namedb[nameindex])
 fmn.close()
 fs.close()
 
+#подключаем вебдрайвер
 options = webdriver.ChromeOptions() 
 options.add_argument("download.default_directory=D:\Учеба\АИС\torgi_parser_Efim")
 driver = webdriver.Chrome(options=options,executable_path=r'C:\Users\Kajima\chromedriver.exe')# путь к драйверу chrome
-
+#страница регистрации
 driver.get('https://account.mail.ru/signup?from=main&rf=auth.mail.ru')
-#кусок ниже не трогался
+
 nameform = driver.find_element_by_xpath('//*[@id="fname"]')
 nameform.click()
 nameform.send_keys(namedb[nameindex])
