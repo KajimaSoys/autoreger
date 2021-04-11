@@ -64,7 +64,7 @@ def driverwork(driver):
     passbutton.click()
     passform = driver.find_element_by_xpath('//input[@name="password"]')
     password = passform.get_attribute('value')
-    print('Старина, не забудь от цифр избавиться во времся формирования юзернейма')
+    print('Старина, не забудь от цифр избавиться во время формирования юзернейма')
     print(login, password)
 
 
